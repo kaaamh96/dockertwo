@@ -1,0 +1,42 @@
+GIt issues --- 
+
+log in first with 
+  git config --global user.name "kaaamh96"
+
+    git config --global user.email ahussainkamrul@hotmail.com
+
+
+
+authentification issues
+
+make an ssh key 
+
+
+
+ 
+
+ls- al ~/.ssh.   find key 
+
+
+eval "$(ssh-agent -s)".  starts ssh key
+
+
+
+add ssh private key to agent 
+ssh-add ~/.ssh/keypair_git
+
+ add public key to git hub
+
+cat ~/.ssh/ keypair_git.pub
+
+
+
+test ssh -T git@github.com
+
+gives hi kaaamh96 u authenticated
+
+so now when you clone or push changes use ssh not https
+
+ now push 
+git push origin main
+
