@@ -1,0 +1,58 @@
+# first i created a python web app
+# contanerised it using docker
+#wrote a docker file
+# built an image and ran that image as a container on local machine.
+
+
+#first installed flask via visual studio terminal
+
+pip3 install flask
+
+# made a directory and created a  python file
+
+mkdir bye_flask
+cd bye_flask
+touch app.py
+
+from flask import Flask
+
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, world!'
+
+if  __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5002)
+
+
+#run the app and click link
+python3 app.py
+
+
+# then i contanerised it, first created a dockerfile
+touch dockerfile
+
+FROM python:3.8-slim
+WORKDIR /app
+COPY . .
+RUN pip install flask
+EXPOSE 5002
+CMD [ "python", "app.py"]
+
+
+#created an image which is a snapshot of app
+
+docker build -t bye_flask .        (. means current directory,if it was saved elsewhere this would change)
+
+
+#run the container on same port for host and container 
+docker run -d -p 5002:5002 bye_flask
+
+# refresh the page it will be running 
+
+# run docker ps to find info on that container
+
+
