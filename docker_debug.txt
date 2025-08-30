@@ -40,3 +40,31 @@ so now when you clone or push changes use ssh not https
  now push 
 git push origin main
 
+
+
+
+
+adding files----
+
+
+first initialise git repo - git init 
+
+add remote repo if not done already - git remote add origin git@github.com:your_username/your_repo.git
+
+
+git add pathway to file.      ( staging area)
+or 
+git add .    ( all)
+
+git commit -m "your commit message"
+
+git push -u origin main
+
+
+
+
+
+
+
+
+
